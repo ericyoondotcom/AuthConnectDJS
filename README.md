@@ -211,6 +211,8 @@ Parameter | Type | Description
 
 Checks if a guild has an account for a particular service associated with it.
 
+> Note: do not call this function on load or immediately after you initialize the library. AuthConnect needs time to load data from the data store.
+
 ### generateAuthURL(service, guildId, clientId, clientSecret, scope): string
 Parameter | Type | Description
 --- | --- | ---
@@ -235,6 +237,8 @@ Returns `null` if no account has been linked yet. Otherwise, returns the access 
 
 > ⚠️ Note that for most services, you should prepend `Bearer ` to the token before you send your request.
 
+> Note: do not call this function on load or immediately after you initialize the library. AuthConnect needs time to load data from the data store.
+
 ### async getAccessTokenExpiryDate(service, guildId): Date?
 Parameter | Type | Description
 --- | --- | ---
@@ -250,6 +254,8 @@ Parameter | Type | Description
 `guildId` | string resolvable | The guild for which to get the data.
 
 Gets the refresh token, if the user is logged in and one exists.
+
+> Note: do not call this function on load or immediately after you initialize the library. AuthConnect needs time to load data from the data store.
 
 > ℹ️ Note: you should seldom need to call this method, as `getAccessToken()` automatically refreshes the token if it has expired.
 
