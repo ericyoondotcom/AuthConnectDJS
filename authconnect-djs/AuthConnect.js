@@ -206,6 +206,9 @@ export default class AuthConnect {
         return data.refreshToken;
     }
 
+    async registerService(serviceID, service) {
+        SERVICES[serviceID] = service;
+    }
 
     setLinkedCallback(onLinked) {
         this.#onLinked = onLinked;
